@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.5/phpunit.xsd"
+         bootstrap="autoload.php"
+         forceCoversAnnotation="true"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         testdox="true"
+         verbose="true">
+    <testsuites>
+	    <testsuite name="user-service">
+	    	<file>thread/UserServiceTest.php</file>
+        </testsuite>
+	    <testsuite name="thread-service">
+	    	<file>thread/ThreadServiceTest.php</file>
+        </testsuite>
+	    <testsuite name="thread-watch">
+	    	<file>thread/ThreadWatchTest.php</file>
+        </testsuite>
+	    <testsuite name="thread-part">
+	    	<file>thread/ThreadPartTest.php</file>
+        </testsuite>
+	    <testsuite name="img-thread">
+	    	<file>thread/ThreadImageTest.php</file>
+        </testsuite>
+	    <testsuite name="api">
+	    	<directory suffix="Test.php">api</directory>
+        </testsuite>
+	    <testsuite name="db">
+	    	<directory suffix="Test.php">database</directory>
+        </testsuite>
+	    <testsuite name="auth">
+	    	<directory suffix="Test.php">auth</directory>
+        </testsuite>
+     	<testsuite name="thread">
+	    	<directory suffix="Test.php">thread</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">/var/www/html</directory>
+        </whitelist>
+    </filter>
+</phpunit>

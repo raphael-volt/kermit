@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui est en ligne?</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            padding: 32px;
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+            color: rgba(0, 0, 0, 0.87)
+        }
+
+        h1 {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-content: stretch;
+            align-items: center;
+            font-size: 36px;   
+        }
+        h1 > * {
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto;
+        }
+        ul {
+            padding: 16px;
+            margin: 0 16px;
+        }
+        .no-reply {
+            font-style: italic;
+            color: #444;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <h1><img src="assets/images/kermit-small.png"/><span>Utilisateurs en ligne</span></h1>
+    <ul id="users"></ul>
+    <script src="watch.js"></script>
+</body>
+</html>

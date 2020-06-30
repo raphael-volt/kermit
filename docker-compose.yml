@@ -1,0 +1,60 @@
+version: '3'
+networks:
+  kermit-network:
+    driver: bridge
+
+services:
+
+  app:
+    container_name: kermit
+    image: rvolt/xdebug-phpunit:latest
+    ports:
+      - 4201:80
+    volumes:
+      - ./www:/var/www/html:rw
+    networks:
+      - kermit-network
+    restart: 'always'
+    links: 
+      - db
+  mail:
+    container_name: kermit-mail
+    image: mailhog/mailhog
+    networks:
+      - kermit-network
+    ports:
+      - 8025:8025
+    restart: 'always'
+  pma:
+    container_name: kermit-pma
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - MYSQL_ROOT_PASSWORD=toor
+      - PMA_USER=dbuser
+      - PMA_PASSWORD=dbuserpwd
+    ports:
+      - 4203:80
+    networks:
+      - kermit-network  
+    links:
+      - db
+    depends_on:
+      - db
+    restart: 'always'
+  db:
+    container_name: kermit-db
+    image: mysql:5.5
+    ports:
+      - 4202:3306
+    networks:
+        - kermit-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=toor
+      - MYSQL_DATABASE=thread  
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbuserpwd
+    volumes:
+        - ./docker/mysql:/var/lib/mysql
+    restart: 'always'

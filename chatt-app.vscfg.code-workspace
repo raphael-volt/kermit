@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "chat-app"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../media/raphael/DATA-EXT4/home/raphael/git/material2/src/material"
+		},
+		{
+			"path": "quill-emoji"
+		},
+		{
+			"path": "../../../../media/raphael/DATA-EXT4/home/raphael/git/svg-factory"
+		},
+		{
+			"path": "../angular/mat-rte-demo"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,12 @@
+www/specs/.phpunit.result.cache
+.buildpath
+.project
+docker/mysql/
+.settings/
+www/assets/
+assets/
+www/tmp
+node_modules/
+private/
+sensitive data
+www/specs/hook/*
